@@ -1,0 +1,10 @@
+B:
+  dbscan:
+    eps_deg: 0.004
+    minPts: 15
+    fraction: 0.09
+    min_samples: 4
+    input: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/clean
+    main_out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/occ/thinned_DBSCAN
+    uncertainty: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/replicates_DBSCAN
+    timestamp: 2025-10-27 19:51:15

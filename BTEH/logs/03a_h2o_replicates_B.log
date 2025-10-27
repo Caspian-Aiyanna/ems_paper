@@ -1,0 +1,13 @@
+[2025-10-27 20:14:07] Starting 03a_h2o_replicates.R  (mode=REPRO, run=B)
+[2025-10-27 20:14:07] Replicates dir: tmp/smoke_E5A
+[2025-10-27 20:14:07] Env dir: data/envi/B
+[2025-10-27 20:14:07] Results root: results/H2O
+[2025-10-27 20:14:08] Read keepvars: 21 variables
+[2025-10-27 20:14:20] H2O threads: 1
+[2025-10-27 20:15:54] Starting 03a_h2o_replicates.R  (mode=FAST, run=B)
+[2025-10-27 20:15:54] Replicates dir: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/replicates_DBSCAN
+[2025-10-27 20:15:54] Env dir: data/envi/B
+[2025-10-27 20:15:54] Results root: results/H2O
+[2025-10-27 20:15:54] Read keepvars: 21 variables
+[2025-10-27 20:16:04] H2O threads: 6
+[2025-10-27 20:16:04] Training E1B (rep 1)

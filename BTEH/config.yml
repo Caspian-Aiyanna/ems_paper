@@ -1,0 +1,43 @@
+mode: FAST         # REPRO or FAST
+
+h2o:
+  nthreads_repro: 1
+  nthreads_fast: -2     # use all cores minus 2
+  seed: 123
+  automl:
+    include_algos_repro: ["GBM","DRF"] # specify algorithms to include for REPRO mode
+    include_algos_fast: [] # best to leave empty for FAST mode (uses all available algorithms)
+    max_models_repro: 30
+    max_models_fast: 60
+
+ssdm:
+  cores_repro: 1
+  cores_fast: 5
+  replications: 10
+
+seeds:
+  global: 123
+  kendall_base: 11000
+  bg_base: 21000
+  cv_base: 22000
+  per_dataset_base: 30000
+
+spatial_cv:
+  block_km: 2.5
+  folds: 5
+
+kendall:
+  cutoff: 0.8
+  sample: 1000
+
+paths:
+  root: "."
+  envi_before: "data/envi/B"
+  envi_after:  "data/envi/A"
+  occ: "data/occ/thinned_DBSCAN"
+  results_h2o: "results/H2O"
+  results_ssdm: "results/SSDM"
+  plans: "plans"
+  clean: "data/clean"
+  raw: "data/raw"
+  logs: "logs"

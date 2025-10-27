@@ -1,0 +1,305 @@
+[2025-10-26 15:41:58] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 15:41:59] Read keepvars: 21 variables
+[2025-10-26 15:45:43] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 15:45:43] Read keepvars: 21 variables
+[2025-10-26 15:45:50] Training ESDM E5A
+[2025-10-26 15:45:50] ESDM error for E5A: rep parameter should be an integer > 1.
+[2025-10-26 15:45:50] All species finished.
+[2025-10-26 15:57:28] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 15:57:28] Read keepvars: 21 variables
+[2025-10-26 15:57:35] SSDM cores=8, replications=10
+[2025-10-26 15:57:35] Training ESDM E5A
+[2025-10-26 15:57:35] ESDM error for E5A: rep parameter should be an integer > 1.
+[2025-10-26 15:57:35] All species finished.
+[2025-10-26 15:57:47] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 15:57:47] Read keepvars: 21 variables
+[2025-10-26 15:57:53] SSDM cores=8, replications=10
+[2025-10-26 15:57:53] Training ESDM E5A
+[2025-10-26 15:57:53] ESDM error for E5A: rep parameter should be an integer > 1.
+[2025-10-26 15:57:53] All species finished.
+[2025-10-26 16:20:17] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 16:20:18] Read keepvars: 21 variables
+[2025-10-26 16:20:24] SSDM cores=8, replications=10 (rep_arg=10)
+[2025-10-26 16:20:24] Training ESDM E5A
+[2025-10-26 16:20:24] ESDM error for E5A: rep parameter should be an integer > 1.
+[2025-10-26 16:20:24] All species finished.
+[2025-10-26 16:40:17] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 16:40:17] Read keepvars: 21 variables
+[2025-10-26 16:40:24] SSDM cores=8, replications=10 (rep_arg=10)
+[2025-10-26 16:40:24] Training ESDM E5A
+[2025-10-26 16:40:24] ESDM error for E5A: rep parameter should be an integer > 1.
+[2025-10-26 16:40:24] All species finished.
+[2025-10-26 16:43:08] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 16:43:08] Read keepvars: 21 variables
+[2025-10-26 16:43:15] SSDM cores=8, replications=10 (rep_arg=10)
+[2025-10-26 16:43:15] Training ESDM E5A
+[2025-10-26 16:43:15] ESDM error for E5A: rep parameter should be an integer > 1.
+[2025-10-26 16:43:15] All species finished.
+[2025-10-26 16:49:46] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 16:49:46] Read keepvars: 21 variables
+[2025-10-26 16:49:53] SSDM cores=8, replications=10 (rep_arg=10)
+[2025-10-26 16:49:53] Training ESDM E5A
+[2025-10-26 16:49:53] ESDM error for E5A: rep parameter should be an integer > 1.
+[2025-10-26 16:49:53] All species finished.
+[2025-10-26 16:55:03] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 16:55:03] Read keepvars: 21 variables
+[2025-10-26 17:00:50] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 17:00:50] Read keepvars: 21 variables
+[2025-10-26 17:00:58] SSDM cores=8, replications=10 (rep_arg=10)
+[2025-10-26 17:00:58] Training ESDM E5A
+[2025-10-26 17:00:58] ensemble_modelling() error for E5A: rep parameter should be an integer > 1.
+[2025-10-26 17:00:58] Fallback path (modelling() + ensemble()) — E5A
+[2025-10-26 17:04:13] ensemble() error: unable to find an inherited method for function 'ensemble' for signature 'x = "missing"'
+[2025-10-26 17:04:13] Failed both paths for E5A
+[2025-10-26 17:04:13] All species finished.
+[2025-10-26 17:19:58] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 17:20:37] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 17:24:31] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 17:25:08] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 17:25:08] Read keepvars: 21 variables
+[2025-10-26 17:42:59] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 17:42:59] Read keepvars: 21 variables
+[2025-10-26 17:43:00] Training E5A
+[2025-10-26 17:45:16] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 17:45:17] Read keepvars: 21 variables
+[2025-10-26 17:45:20] Training E1B
+[2025-10-26 17:49:49] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 17:49:50] Read keepvars: 21 variables
+[2025-10-26 17:49:50] Training E5A
+[2025-10-26 17:50:00] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 17:50:00] Read keepvars: 21 variables
+[2025-10-26 17:50:01] Training E1B
+[2025-10-26 18:01:33] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 18:01:33] Read keepvars: 21 variables
+[2025-10-26 18:01:33] Training E5A
+[2025-10-26 18:02:36] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 18:02:36] Read keepvars: 21 variables
+[2025-10-26 18:02:36] Training E1B
+[2025-10-26 18:07:04] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 18:07:04] Read keepvars: 21 variables
+[2025-10-26 18:07:04] Training E5A
+[2025-10-26 18:07:13] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-26 18:07:13] Read keepvars: 21 variables
+[2025-10-26 18:07:13] Training E1B
+[2025-10-26 18:13:12] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 12:08:17] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 12:08:17] SSDM cores=8, replications=10
+[2025-10-27 12:08:18] Read keepvars: 21 variables
+[2025-10-27 12:08:18] Training E5A
+[2025-10-27 12:16:05] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 12:16:05] SSDM cores=8, replications=10
+[2025-10-27 12:16:05] Read keepvars: 21 variables
+[2025-10-27 12:16:05] Training E5A
+[2025-10-27 12:19:44] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 12:19:44] SSDM cores=8, replications=10
+[2025-10-27 12:19:44] Read keepvars: 21 variables
+[2025-10-27 12:19:44] Training E5A
+[2025-10-27 12:19:44] Training ESDM E5A (cores=8, reps=10)
+[2025-10-27 12:19:44] ensemble_modelling() CV path error for E5A: rep parameter should be an integer > 1.
+[2025-10-27 12:19:44] Fallback path (modelling() + ensemble()) — E5A
+[2025-10-27 12:22:54] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 12:22:54] SSDM cores=8, replications=10
+[2025-10-27 12:22:54] Read keepvars: 21 variables
+[2025-10-27 12:22:54] Training E5A
+[2025-10-27 12:22:55] Training ESDM E5A (cores=8, reps=10)
+[2025-10-27 12:22:55] ensemble_modelling() CV path error for E5A: PA parameter should be a list, or NULL to be automatically defined.
+[2025-10-27 12:22:55] Fallback path (modelling() + ensemble()) — E5A
+[2025-10-27 12:22:55] modelling(GLM) error for E5A: PA parameter should be a list, or NULL to be automatically defined.
+[2025-10-27 12:22:55] modelling(GBM) error for E5A: PA parameter should be a list, or NULL to be automatically defined.
+[2025-10-27 12:22:55] modelling(RF) error for E5A: PA parameter should be a list, or NULL to be automatically defined.
+[2025-10-27 12:22:55] modelling(MARS) error for E5A: PA parameter should be a list, or NULL to be automatically defined.
+[2025-10-27 12:22:55] modelling(SVM) error for E5A: PA parameter should be a list, or NULL to be automatically defined.
+[2025-10-27 12:22:55] modelling(ANN) error for E5A: PA parameter should be a list, or NULL to be automatically defined.
+[2025-10-27 12:22:55] modelling(CTA) error for E5A: PA parameter should be a list, or NULL to be automatically defined.
+[2025-10-27 12:24:44] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 12:24:44] SSDM cores=8, replications=10
+[2025-10-27 12:24:44] Read keepvars: 21 variables
+[2025-10-27 12:24:44] Training E5A
+[2025-10-27 12:24:45] Training ESDM E5A (cores=8, reps=10)
+[2025-10-27 12:24:45] ensemble_modelling() error (PA=list): PA should be a list containing as PA = list('nb'=..., 'strat'=...).
+[2025-10-27 12:24:45] ensemble_modelling() error (PA=NULL): rep parameter should be an integer > 1.
+[2025-10-27 12:24:45] Fallback path (modelling() + ensemble()) — E5A
+[2025-10-27 12:24:45] 
+[2025-10-27 12:35:42] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 12:35:42] SSDM cores=8, replications=10
+[2025-10-27 12:35:43] Read keepvars: 21 variables
+[2025-10-27 12:35:43] Training E5A
+[2025-10-27 12:35:44] Training ESDM E5A (cores=8, reps(cfg)=10)
+[2025-10-27 12:35:44] ensemble_modelling() error (PA=list): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] ensemble_modelling() error (PA=NULL): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] Fallback path (modelling() + ensemble()) — E5A
+[2025-10-27 12:35:44] modelling(GLM) error for E5A (PA=list): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(GLM) error for E5A (PA=NULL): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(GBM) error for E5A (PA=list): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(GBM) error for E5A (PA=NULL): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(RF) error for E5A (PA=list): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(RF) error for E5A (PA=NULL): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(MARS) error for E5A (PA=list): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(MARS) error for E5A (PA=NULL): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(SVM) error for E5A (PA=list): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(SVM) error for E5A (PA=NULL): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(ANN) error for E5A (PA=list): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(ANN) error for E5A (PA=NULL): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(CTA) error for E5A (PA=list): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:35:44] modelling(CTA) error for E5A (PA=NULL): cv parameter should be k-fold, holdout or LOO (see help).
+[2025-10-27 12:36:39] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 12:36:39] SSDM cores=8, replications=10
+[2025-10-27 12:36:39] Read keepvars: 21 variables
+[2025-10-27 12:36:39] Training E5A
+[2025-10-27 12:36:40] Training ESDM E5A (cores=8, reps(cfg)=10)
+[2025-10-27 12:36:40] ensemble_modelling() error (PA=list): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] ensemble_modelling() error (PA=NULL): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] Fallback path (modelling() + ensemble()) — E5A
+[2025-10-27 12:36:40] modelling(GLM) error for E5A (PA=list): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(GLM) error for E5A (PA=NULL): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(GBM) error for E5A (PA=list): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(GBM) error for E5A (PA=NULL): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(RF) error for E5A (PA=list): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(RF) error for E5A (PA=NULL): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(MARS) error for E5A (PA=list): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(MARS) error for E5A (PA=NULL): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(SVM) error for E5A (PA=list): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(SVM) error for E5A (PA=NULL): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(ANN) error for E5A (PA=list): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(ANN) error for E5A (PA=NULL): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(CTA) error for E5A (PA=list): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:36:40] modelling(CTA) error for E5A (PA=NULL): cv.param[1] (train fraction) parameters should be a float between 0 and 1 (see help).
+[2025-10-27 12:40:37] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 12:40:37] SSDM cores=8, replications=10
+[2025-10-27 12:40:37] Read keepvars: 21 variables
+[2025-10-27 12:40:37] Training E5A
+[2025-10-27 12:40:37] Training ESDM E5A (cores=8, reps(cfg)=10)
+[2025-10-27 13:39:39] ensemble_modelling() error (PA=list): worker initialization failed: package or namespace load failed for 'SSDM' in inDL(x, as.logical(local), as.logical(now), ...):
+ unable to load shared object 'D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/renv/library/windows/R-4.5/x86_64-w64-mingw32/fields/libs/x64/fields.dll':
+  LoadLibrary failure:  The paging file is too small for this operation to complete.
+
+[2025-10-27 13:42:15] ensemble_modelling() error (PA=NULL): error reading from connection
+[2025-10-27 13:42:15] Fallback path (modelling() + ensemble()) — E5A
+[2025-10-27 13:42:20] modelling(GLM) error for E5A (PA=list): error in evaluating the argument 'x' in selecting a method for function 'Which': error in evaluating the argument 'x' in selecting a method for function 'is.factor': std::bad_alloc
+[2025-10-27 13:42:25] modelling(GLM) error for E5A (PA=NULL): error in evaluating the argument 'x' in selecting a method for function 'Which': error in evaluating the argument 'x' in selecting a method for function 'is.factor': std::bad_alloc
+[2025-10-27 14:01:51] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 14:01:51] SSDM cores=8, replications=10
+[2025-10-27 14:01:52] Read keepvars: 21 variables
+[2025-10-27 14:01:52] Training E5A
+[2025-10-27 14:01:53] Training ESDM E5A (cores=8, reps(cfg)=10)
+[2025-10-27 14:11:52] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 14:11:52] SSDM cores=8, replications=10
+[2025-10-27 14:11:52] Read keepvars: 21 variables
+[2025-10-27 14:11:52] Training E5A
+[2025-10-27 14:11:53] Training ESDM E5A (cores=8, reps(cfg)=10)
+[2025-10-27 14:17:25] ensemble_modelling() error (PA=list): 8 nodes produced errors; first error: Error : std::bad_alloc
+
+[2025-10-27 14:19:41] ensemble_modelling() error (PA=NULL): Cluster setup failed. 3 of 7 workers failed to connect.
+[2025-10-27 14:19:41] Fallback path (modelling() + ensemble()) — E5A
+[2025-10-27 15:04:40] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 15:04:41] SSDM cores=8, replications=10
+[2025-10-27 15:07:52] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 15:07:52] SSDM cores=8, replications=10
+[2025-10-27 15:11:33] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 15:11:33] SSDM cores=8, replications=10
+[2025-10-27 15:11:34] Read keepvars: 21 variables
+[2025-10-27 15:11:35] Training E5A
+[2025-10-27 15:11:35] Training ESDM E5A (cores=2, reps=3)
+[2025-10-27 15:11:35] ensemble_modelling() error for E5A: rep parameter should be an integer > 1.
+[2025-10-27 15:16:19] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 15:16:19] SSDM cores=8, replications=10
+[2025-10-27 15:16:19] Read keepvars: 21 variables
+[2025-10-27 15:16:19] Training E5A
+[2025-10-27 15:16:19] Training ESDM E5A (cores=2, reps=3)
+[2025-10-27 15:16:19] ensemble_modelling() error for E5A: rep parameter should be an integer > 1.
+[2025-10-27 15:18:46] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 15:18:46] SSDM cores=8, replications=10
+[2025-10-27 15:18:46] Read keepvars: 21 variables
+[2025-10-27 15:18:46] Training E5A
+[2025-10-27 15:18:46] Training ESDM E5A (cores=2, reps=3)
+[2025-10-27 15:18:46] ensemble_modelling() error for E5A: rep parameter should be an integer > 1.
+[2025-10-27 15:19:37] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 15:19:37] SSDM cores=8, replications=10
+[2025-10-27 15:19:38] Read keepvars: 21 variables
+[2025-10-27 15:19:38] Training E5A
+[2025-10-27 15:19:38] Training ESDM E5A (cores=2, reps=3)
+[2025-10-27 15:22:40] Done E5A
+[2025-10-27 15:22:40] All species finished.
+[2025-10-27 16:41:20] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 16:41:20] SSDM cores=8, replications=10
+[2025-10-27 16:41:22] Read keepvars: 21 variables
+[2025-10-27 16:41:23] Skip E5A — outputs present
+[2025-10-27 16:41:23] All species finished.
+[2025-10-27 16:54:32] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 16:54:32] SSDM cores=8, replications=10
+[2025-10-27 16:54:32] Read keepvars: 21 variables
+[2025-10-27 16:54:32] Training E5A
+[2025-10-27 16:54:38] Training ESDM E5A (cores=2, reps=3)
+[2025-10-27 16:59:57] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 16:59:57] SSDM cores=8, replications=10 (FAST default if unset = 3)
+[2025-10-27 16:59:57] Read keepvars: 21 variables
+[2025-10-27 16:59:57] Training E5A
+[2025-10-27 16:59:58] Training ESDM E5A (cores=2, reps=3)
+[2025-10-27 16:59:58] ensemble_modelling() error for E5A: rep parameter should be an integer > 1.
+[2025-10-27 17:05:08] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 17:05:08] SSDM cores=8, replications=10 (FAST default if unset = 7; detectCores=8)
+[2025-10-27 17:05:08] Read keepvars: 21 variables
+[2025-10-27 17:05:09] Training E5A
+[2025-10-27 17:05:09] Training ESDM E5A (cores=2, reps=3)
+[2025-10-27 17:05:09] ensemble_modelling() error for E5A: rep parameter should be an integer > 1.
+[2025-10-27 17:16:43] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 17:16:43] SSDM cores=8, replications=10 (FAST default if unset = 7; detectCores=8)
+[2025-10-27 17:16:44] Read keepvars: 21 variables
+[2025-10-27 17:16:44] Training E5A
+[2025-10-27 17:16:44] Training ESDM E5A (cores=2, reps=3)
+[2025-10-27 17:16:44] ensemble_modelling() error for E5A: rep parameter should be an integer > 1.
+[2025-10-27 17:17:55] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 17:18:20] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 17:18:20] SSDM cores=8, replications=10
+[2025-10-27 17:18:20] Read keepvars: 21 variables
+[2025-10-27 17:18:20] Training E5A
+[2025-10-27 17:18:21] Training ESDM E5A (cores=2, reps=3)
+[2025-10-27 17:19:12] ensemble_modelling() error for E5A: error reading from connection
+[2025-10-27 17:20:37] Starting 04_ssdm_train.R  (mode=REPRO, run=B)
+[2025-10-27 17:20:37] SSDM cores=1, replications=10
+[2025-10-27 17:20:37] Read keepvars: 21 variables
+[2025-10-27 17:20:37] Training E5A
+[2025-10-27 17:20:38] Training ESDM E5A (cores=1, reps=3)
+[2025-10-27 17:21:03] ensemble_modelling() error for E5A: error reading from connection
+[2025-10-27 18:40:34] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 18:40:34] SSDM cores=5, replications=10
+[2025-10-27 18:40:35] Read keepvars: 21 variables
+[2025-10-27 18:40:35] Training E5A
+[2025-10-27 18:40:40] Training ESDM E5A (FAST: cores=5, rep=10)
+[2025-10-27 18:40:40] ensemble_modelling() error for E5A: rep parameter should be an integer > 1.
+[2025-10-27 18:41:36] Starting 04_ssdm_train.R  (mode=REPRO, run=B)
+[2025-10-27 18:41:36] SSDM cores=1, replications=10
+[2025-10-27 18:41:36] Read keepvars: 21 variables
+[2025-10-27 18:41:36] Training E5A
+[2025-10-27 18:41:37] Training ESDM E5A (REPRO: core=1, rep=1)
+[2025-10-27 18:45:50] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 18:45:50] SSDM cores=5, replications=10
+[2025-10-27 18:45:50] Read keepvars: 21 variables
+[2025-10-27 18:45:50] Training E5A
+[2025-10-27 18:45:51] Training ESDM E5A (FAST: cores=5, rep=10)
+[2025-10-27 18:45:51] ensemble_modelling() error for E5A: rep parameter should be an integer > 1.
+[2025-10-27 18:46:08] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 18:46:08] SSDM cores=5, replications=10
+[2025-10-27 18:46:08] Read keepvars: 21 variables
+[2025-10-27 18:46:08] Training E5A
+[2025-10-27 18:46:09] Training ESDM E5A (FAST: cores=5, rep=10)
+[2025-10-27 18:59:17] Done E5A
+[2025-10-27 18:59:17] All species finished.
+[2025-10-27 19:12:19] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 19:12:20] SSDM cores=5, replications=10
+[2025-10-27 19:12:20] Read keepvars: 21 variables
+[2025-10-27 19:12:20] Training E5A
+[2025-10-27 19:12:20] Training ESDM E5A (FAST: cores=5, rep=10)
+[2025-10-27 19:12:27] ensemble_modelling() error for E5A: error reading from connection
+[2025-10-27 19:21:00] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 19:21:00] SSDM cores=5, replications=10
+[2025-10-27 19:21:03] Read keepvars: 21 variables
+[2025-10-27 19:21:03] Training E5A
+[2025-10-27 19:21:04] Training ESDM E5A (FAST: cores=5, rep=10)
+[2025-10-27 19:21:27] ensemble_modelling() error for E5A: 10 nodes produced errors; first error: Error : std::bad_alloc
+
+[2025-10-27 19:23:01] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-27 19:23:01] SSDM cores=5, replications=10
+[2025-10-27 19:23:02] Read keepvars: 21 variables
+[2025-10-27 19:23:02] Training E5A
+[2025-10-27 19:23:07] Training ESDM E5A (FAST: cores=5, rep=10)
