@@ -7,6 +7,7 @@ suppressPackageStartupMessages({
   library(fs)
   library(dbscan)
   library(yaml)
+  library(tibble)
 })
 
 # --- Locate script dir and project root, so sourcing works from any CWD ---
@@ -14,7 +15,6 @@ suppressPackageStartupMessages({
   args <- commandArgs(trailingOnly = FALSE)
   filearg <- grep("^--file=", args, value = TRUE)
   if (length(filearg)) return(normalizePath(sub("^--file=", "", filearg)))
-  # Fallback when run via source() or in IDE
   if (!is.null(sys.frames()) && length(sys.frames())) {
     fi <- tryCatch(normalizePath(sys.frames()[[1]]$ofile), error = function(e) NA_character_)
     if (!is.na(fi)) return(fi)
@@ -30,13 +30,12 @@ source(file.path(.root, "R", "utils_repro.R"))
 # ---------------- CLI ----------------
 opt <- list(
   make_option(c("--run"),         type="character", default="B",     help="Run tag (e.g., A or B)"),
-  make_option(c("--eps_deg"),     type="double",    default=0.004,   help="DBSCAN eps in *degrees* (default 0.004 ≈ 400m at equator)"),
+  make_option(c("--eps_deg"),     type="double",    default=0.004,   help="DBSCAN eps in *degrees* (~400 m at equator)"),
   make_option(c("--minPts"),      type="integer",   default=15,      help="DBSCAN minPts"),
   make_option(c("--fraction"),    type="double",    default=0.09,    help="Sampling fraction within clusters/noise"),
   make_option(c("--min_samples"), type="integer",   default=4,       help="Minimum samples to take per cluster"),
   make_option(c("--input"),       type="character", default=NULL,    help="Input folder of per-species cleaned CSVs (e.g., data/clean)"),
   make_option(c("--out_thin"),    type="character", default=NULL,    help="Output folder for MAIN replicate (default: data/occ/thinned_DBSCAN)"),
-  # NOTE: default replicates folder is now at PROJECT ROOT for convenience (can be overridden)
   make_option(c("--out_unc"),     type="character", default=NULL,    help="Output folder for UNCERTAINTY replicates (default: <project_root>/replicates_DBSCAN)"),
   make_option(c("--species"),     type="character", default=NULL,    help="Optional: process a single species (e.g., E3A)")
 )
@@ -48,16 +47,14 @@ mode <- set_mode(cfg)
 # ---------------- Paths ----------------
 in_dir    <- opts$input    %||% (cfg$paths$clean           %||% fs::path(.root, "data", "clean"))
 out_thin  <- opts$out_thin %||% (cfg$paths$occ_thin        %||% fs::path(.root, "data","occ","thinned_DBSCAN"))
-# Default UNCERTAINTY/replicates folder at *project root* (overridable via --out_unc)
 out_unc   <- opts$out_unc  %||% fs::path(.root, "replicates_DBSCAN")
-
 logf      <- fs::path(cfg$paths$logs   %||% fs::path(.root, "logs"),  paste0("02_dbscan_thin_", opts$run, ".log"))
 plans_yml <- fs::path(cfg$paths$plans  %||% fs::path(.root, "plans"), "dbscan_params.yml")
+results_compare_dir <- cfg$paths$compare %||% fs::path(.root, "results", "compare")
 
-dir_ensure(out_thin)
-dir_ensure(out_unc)
-dir_ensure(fs::path_dir(logf))
-dir_ensure(fs::path_dir(plans_yml))
+dir_ensure(out_thin); dir_ensure(out_unc)
+dir_ensure(fs::path_dir(logf)); dir_ensure(fs::path_dir(plans_yml))
+dir_ensure(results_compare_dir)
 
 log_line(paste0("Starting 02_dbscan_thin.R (mode=", mode, ")"), logf)
 log_line(paste0("Run: ", opts$run,
@@ -76,12 +73,10 @@ if (!length(csvs)) {
   log_line("No CSV files found in input; exiting.", logf)
   quit(status = 0)
 }
-
-files_df <- tibble::tibble(
+files_df <- tibble(
   path    = csvs,
   species = fs::path_ext_remove(fs::path_file(csvs))
 )
-
 if (!is.null(opts$species)) {
   files_df <- dplyr::filter(files_df, species == opts$species)
   if (!nrow(files_df)) {
@@ -98,27 +93,54 @@ std_names <- function(nms) {
     str_replace_all("\\.", "_")
 }
 
-normalize_columns_force_species <- function(df, forced_species) {
+# Return cleaned df + diagnostics for losses
+normalize_with_diagnostics <- function(df, forced_species) {
+  original <- df
   names(df) <- std_names(names(df))
   lon_candidates <- c("lon","longitude","x","long","long_wgs84","decimallongitude")
   lat_candidates <- c("lat","latitude","y","lat_wgs84","decimallatitude")
   pick <- function(cands) { hit <- intersect(cands, names(df)); if (length(hit)) hit[[1]] else NA_character_ }
   lon_col <- pick(lon_candidates); lat_col <- pick(lat_candidates)
   if (is.na(lon_col) || is.na(lat_col)) stop("Could not find longitude/latitude columns.")
-  df |>
-    transmute(
+
+  n_raw <- nrow(df)
+
+  # Coerce to numeric and track parse NAs
+  lon_num <- suppressWarnings(as.numeric(df[[lon_col]]))
+  lat_num <- suppressWarnings(as.numeric(df[[lat_col]]))
+
+  na_parse <- sum(!is.finite(lon_num) | !is.finite(lat_num))
+
+  # Bounds filter
+  in_bounds <- is.finite(lon_num) & is.finite(lat_num) &
+               lon_num >= -180 & lon_num <= 180 &
+               lat_num >= -90  & lat_num <= 90
+  n_oob <- sum(!in_bounds & (is.finite(lon_num) & is.finite(lat_num)))
+
+  # Keep only finite + in-bounds
+  keep_idx <- which(in_bounds)
+  kept_df <- tibble(species = forced_species, lon = lon_num[keep_idx], lat = lat_num[keep_idx])
+  n_after_bounds <- nrow(kept_df)
+
+  # Drop exact duplicate lon/lat
+  before_distinct <- n_after_bounds
+  kept_df <- kept_df %>% distinct(species, lon, lat, .keep_all = TRUE)
+  n_dupes <- before_distinct - nrow(kept_df)
+
+  out <- list(
+    df = kept_df,
+    stats = tibble(
       species = forced_species,
-      lon = as.numeric(.data[[lon_col]]),
-      lat = as.numeric(.data[[lat_col]])
-    ) |>
-    filter(is.finite(lon), is.finite(lat), lon >= -180, lon <= 180, lat >= -90, lat <= 90) |>
-    distinct(species, lon, lat, .keep_all = TRUE)
+      n_raw = n_raw,
+      n_na_or_nonfinite = na_parse,
+      n_out_of_bounds = n_oob,
+      n_after_clean = nrow(kept_df),
+      n_exact_dupes_dropped = n_dupes
+    )
+  )
+  return(out)
 }
 
-# Selection logic (STRICTLY in *degrees*):
-# - DBSCAN on (lon, lat) with eps = opts$eps_deg, minPts = opts$minPts
-# - Noise (cluster==0): keep proportion = fraction, but at least 1 when there is >1 row (your original behavior)
-# - Clusters (>0): keep max(min_samples, round(n * fraction)), capped at n
 sample_with_dbscan <- function(df, eps_deg, minPts, fraction, min_samples, seed = NULL) {
   if (!is.null(seed)) set.seed(seed)
   clu <- dbscan::dbscan(as.matrix(df[, c("lon","lat")]), eps = eps_deg, minPts = minPts)
@@ -127,7 +149,6 @@ sample_with_dbscan <- function(df, eps_deg, minPts, fraction, min_samples, seed 
     group_by(cluster_id) %>%
     group_modify(~ {
       if (.y$cluster_id == 0L) {
-        # noise: proportion (preserve your 'keep >=1' intent when >1 rows)
         if (nrow(.x) <= 1) return(.x)
         keep_n <- max(1, round(nrow(.x) * fraction))
         dplyr::slice_sample(.x, n = min(nrow(.x), keep_n))
@@ -161,17 +182,27 @@ if (!ok) log_line(paste0("WARN: failed to write params YAML: ", plans_yml), logf
   log_line(paste0("Recorded params in: ", plans_yml), logf)
 
 # ------------- Process -------------
-total_in <- 0L; total_main <- 0L; total_unc <- c(0L,0L,0L)
+total_raw <- 0L; total_clean <- 0L
+total_main <- 0L; total_unc <- c(0L,0L,0L)
 summaries <- list()
+cleaning_stats <- list()
 
 for (i in seq_len(nrow(files_df))) {
   sp   <- files_df$species[i]
   path <- files_df$path[i]
 
   raw <- safe_read_csv(path)
-  sp_df <- normalize_columns_force_species(raw, sp)
-  n_in  <- nrow(sp_df)
-  total_in <- total_in + n_in
+
+  # --- CLEAN & DIAGNOSE ---
+  diag <- normalize_with_diagnostics(raw, sp)
+  sp_df <- diag$df
+  stat  <- diag$stats
+
+  total_raw   <- total_raw   + stat$n_raw
+  total_clean <- total_clean + stat$n_after_clean
+  cleaning_stats[[length(cleaning_stats)+1L]] <- stat
+
+  n_in_clean <- nrow(sp_df)
 
   # Seeds: deterministic for main; fixed replicates 1..3 but derived per species
   main_seed <- seed_for(paste0("dbscan_main_", opts$run, "_", sp),
@@ -189,7 +220,8 @@ for (i in seq_len(nrow(files_df))) {
   total_main <- total_main + nrow(main_df)
   main_out_path <- fs::path(out_thin, paste0(sp, ".csv"))
   safe_write_csv(main_df, main_out_path)
-  log_line(sprintf("MAIN  %s: %d -> %d (saved %s)", sp, n_in, nrow(main_df), main_out_path), logf)
+  log_line(sprintf("MAIN  %s: raw=%d | clean=%d -> kept=%d (saved %s)",
+                   sp, stat$n_raw, n_in_clean, nrow(main_df), main_out_path), logf)
 
   # ---- UNCERTAINTY replicates (rep1..rep3) ----
   rep_counts <- integer(3)
@@ -205,30 +237,69 @@ for (i in seq_len(nrow(files_df))) {
       seed = rep_seed
     )
     rep_counts[rep_idx] <- nrow(rep_df)
-    total_unc[rep_idx] <- total_unc[rep_idx] + nrow(rep_df)
+    total_unc[rep_idx]  <- total_unc[rep_idx] + nrow(rep_df)
     rep_out_path <- fs::path(out_unc, paste0(sp, "_rep", rep_idx, ".csv"))
     safe_write_csv(rep_df, rep_out_path)
-    log_line(sprintf("UNC%1d %s: %d -> %d (saved %s)", rep_idx, sp, n_in, nrow(rep_df), rep_out_path), logf)
+    log_line(sprintf("UNC%1d %s: raw=%d | clean=%d -> kept=%d (saved %s)",
+                     rep_idx, sp, stat$n_raw, n_in_clean, nrow(rep_df), rep_out_path), logf)
   }
 
-  # optional per-species summary row
-  summaries[[length(summaries)+1L]] <- tibble::tibble(
-    species   = sp,
-    n_input   = n_in,
-    kept_main = nrow(main_df),
-    kept_rep1 = rep_counts[1],
-    kept_rep2 = rep_counts[2],
-    kept_rep3 = rep_counts[3]
+  # per-species summary row
+  summaries[[length(summaries)+1L]] <- tibble(
+    species     = sp,
+    input_raw   = stat$n_raw,
+    input_clean = n_in_clean,
+    kept_main   = nrow(main_df),
+    kept_rep1   = rep_counts[1],
+    kept_rep2   = rep_counts[2],
+    kept_rep3   = rep_counts[3]
   )
 }
 
-# ------------- Wrap up -------------
-if (length(summaries)) {
-  sumdf <- dplyr::bind_rows(summaries)
-  sum_path <- fs::path(fs::path_dir(logf), paste0("dbscan_summary_", opts$run, ".csv"))
-  safe_write_csv(sumdf, sum_path)
-  log_line(paste0("Summary saved: ", sum_path), logf)
-}
+# ------------- Wrap up: diagnostics + summaries -------------
+clean_df <- dplyr::bind_rows(cleaning_stats)
+sumdf    <- dplyr::bind_rows(summaries)
 
-log_line(sprintf("DONE. Total input: %d | main kept: %d | unc reps kept: [%d, %d, %d]",
-                 total_in, total_main, total_unc[1], total_unc[2], total_unc[3]), logf)
+# Write detailed cleaning diagnostics per species
+clean_diag_path <- fs::path(fs::path_dir(logf), paste0("cleaning_diagnostics_", opts$run, ".csv"))
+safe_write_csv(clean_df, clean_diag_path)
+log_line(paste0("Cleaning diagnostics saved: ", clean_diag_path), logf)
+
+# Write thinning summary (before/after), for the front-end & QA
+sumdf <- sumdf %>% mutate(
+  keep_ratio_main = ifelse(input_clean > 0, kept_main / input_clean, NA_real_)
+)
+thin_summary_path <- fs::path(results_compare_dir, "thin_summary.csv")
+safe_write_csv(sumdf, thin_summary_path)
+log_line(paste0("Thinning summary saved: ", thin_summary_path), logf)
+
+# Totals (raw vs clean vs kept)
+totals <- tibble(
+  run = opts$run,
+  total_raw = total_raw,
+  total_clean = total_clean,
+  main_kept = total_main,
+  unc_rep1_kept = total_unc[1],
+  unc_rep2_kept = total_unc[2],
+  unc_rep3_kept = total_unc[3],
+  raw_minus_clean = total_raw - total_clean
+)
+totals_path <- fs::path(fs::path_dir(logf), paste0("thin_totals_", opts$run, ".csv"))
+safe_write_csv(totals, totals_path)
+log_line(paste0("Totals saved: ", totals_path), logf)
+
+# Console print: neat table
+cat("\n==================== DBSCAN THINNING SUMMARY ====================\n")
+print(
+  sumdf %>%
+    select(species, input_raw, input_clean, kept_main, kept_rep1, kept_rep2, kept_rep3, keep_ratio_main) %>%
+    arrange(species)
+)
+cat("-----------------------------------------------------------------\n")
+print(totals)
+cat("-----------------------------------------------------------------\n")
+cat("Note: input_raw - input_clean = rows dropped during cleaning (NA/non-finite, out-of-bounds, or exact lon/lat duplicates).\n\n")
+
+# Final log line
+log_line(sprintf("DONE. Total RAW: %d | CLEAN: %d | main kept: %d | unc reps kept: [%d, %d, %d]",
+                 total_raw, total_clean, total_main, total_unc[1], total_unc[2], total_unc[3]), logf)

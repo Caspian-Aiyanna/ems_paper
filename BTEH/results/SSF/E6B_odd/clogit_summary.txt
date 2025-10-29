@@ -1,0 +1,74 @@
+Call:
+coxph(formula = Surv(rep(1, 97470L), case_) ~ one_z + two_z + 
+    three_z + four_z + five_z + six_z + seven_z + eight_z + nine_z + 
+    ten_z + eleven_z + twelve_z + thirteen_z + fourteen_z + fifteen_z + 
+    sixteen_z + seventeen_z + eighteen_z + nineteen_z + twenty_z + 
+    twentyone_z + twentytwo_z + twentythree_z + twentyfour_z + 
+    twentyfive_z + twentysix_z + strata(step_id_), data = ssf_data, 
+    method = "exact")
+
+  n= 97470, number of events= 9070 
+
+                    coef  exp(coef)   se(coef)      z Pr(>|z|)    
+one_z          5.701e-02  1.059e+00  2.098e-01  0.272 0.785836    
+two_z         -8.249e-01  4.383e-01  2.151e-01 -3.836 0.000125 ***
+three_z       -3.867e-01  6.793e-01  2.601e-01 -1.487 0.136992    
+four_z        -7.053e-01  4.940e-01  6.249e-01 -1.129 0.259050    
+five_z         4.666e-01  1.595e+00  1.707e-01  2.734 0.006261 ** 
+six_z         -1.055e-01  8.999e-01  6.925e-02 -1.523 0.127704    
+seven_z       -8.848e-01  4.128e-01  5.336e-01 -1.658 0.097277 .  
+eight_z        7.239e-01  2.062e+00  6.203e-01  1.167 0.243198    
+nine_z        -4.348e-01  6.474e-01  1.737e-01 -2.503 0.012308 *  
+ten_z          3.217e-01  1.379e+00  4.056e-01  0.793 0.427687    
+eleven_z       8.935e-01  2.444e+00  1.946e-01  4.592 4.39e-06 ***
+twelve_z       2.557e-01  1.291e+00  1.918e-01  1.333 0.182399    
+thirteen_z    -5.278e-02  9.486e-01  1.290e-01 -0.409 0.682362    
+fourteen_z     2.338e-01  1.263e+00  1.219e-01  1.917 0.055210 .  
+fifteen_z      1.831e+03        Inf  1.725e+03  1.061 0.288563    
+sixteen_z     -3.655e+03  0.000e+00  3.445e+03 -1.061 0.288717    
+seventeen_z   -3.058e+03  0.000e+00  2.882e+03 -1.061 0.288654    
+eighteen_z     4.173e-01  1.518e+00  1.968e-01  2.120 0.033966 *  
+nineteen_z     1.280e-01  1.137e+00  1.775e-01  0.721 0.471025    
+twenty_z       7.032e-02  1.073e+00  1.436e-02  4.898 9.66e-07 ***
+twentyone_z   -2.213e-01  8.015e-01  4.182e-02 -5.291 1.21e-07 ***
+twentytwo_z    4.397e-02  1.045e+00  1.429e-02  3.077 0.002092 ** 
+twentythree_z -4.455e-02  9.564e-01  2.671e-02 -1.668 0.095402 .  
+twentyfour_z  -2.229e-01  8.002e-01  2.251e-02 -9.901  < 2e-16 ***
+twentyfive_z  -5.097e-02  9.503e-01  2.316e-02 -2.201 0.027732 *  
+twentysix_z   -1.102e-01  8.956e-01  1.839e-02 -5.995 2.04e-09 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+              exp(coef) exp(-coef) lower .95 upper .95
+one_z            1.0587     0.9446    0.7017    1.5972
+two_z            0.4383     2.2817    0.2875    0.6681
+three_z          0.6793     1.4722    0.4080    1.1309
+four_z           0.4940     2.0244    0.1451    1.6812
+five_z           1.5946     0.6271    1.1412    2.2281
+six_z            0.8999     1.1112    0.7857    1.0307
+seven_z          0.4128     2.4225    0.1451    1.1747
+eight_z          2.0624     0.4849    0.6115    6.9558
+nine_z           0.6474     1.5446    0.4606    0.9100
+ten_z            1.3794     0.7249    0.6230    3.0544
+eleven_z         2.4437     0.4092    1.6688    3.5782
+twelve_z         1.2914     0.7744    0.8868    1.8805
+thirteen_z       0.9486     1.0542    0.7367    1.2214
+fourteen_z       1.2633     0.7915    0.9948    1.6044
+fifteen_z           Inf     0.0000    0.0000       Inf
+sixteen_z        0.0000        Inf    0.0000       Inf
+seventeen_z      0.0000        Inf    0.0000       Inf
+eighteen_z       1.5178     0.6589    1.0321    2.2320
+nineteen_z       1.1365     0.8799    0.8025    1.6094
+twenty_z         1.0729     0.9321    1.0431    1.1035
+twentyone_z      0.8015     1.2477    0.7384    0.8699
+twentytwo_z      1.0449     0.9570    1.0161    1.0746
+twentythree_z    0.9564     1.0456    0.9076    1.0078
+twentyfour_z     0.8002     1.2497    0.7657    0.8363
+twentyfive_z     0.9503     1.0523    0.9081    0.9944
+twentysix_z      0.8956     1.1165    0.8639    0.9285
+
+Concordance= 0.546  (se = 0.004 )
+Likelihood ratio test= 287.4  on 26 df,   p=<2e-16
+Wald test            = 271.2  on 26 df,   p=<2e-16
+Score (logrank) test = 269.4  on 26 df,   p=<2e-16
+

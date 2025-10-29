@@ -1,0 +1,10 @@
+[2025-10-28 16:51:23] Starting 03_h2o_train.R  (mode=FAST, run=A)
+[2025-10-28 16:51:46] Created keepvars: 21 variables
+[2025-10-28 16:51:59] H2O threads: 6
+[2025-10-28 16:51:59] All species finished.
+[2025-10-28 16:53:48] Starting 03_h2o_train.R  (mode=FAST, run=A)
+[2025-10-28 16:53:48] Read keepvars: 21 variables
+[2025-10-28 16:53:58] H2O threads: 6
+[2025-10-28 16:53:58] Training E6B
+[2025-10-28 17:02:02] Done E6B
+[2025-10-28 17:02:02] All species finished.

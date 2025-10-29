@@ -1,0 +1,4 @@
+[2025-10-28 16:53:03] Starting 04_ssdm_train.R  (mode=FAST, run=A)
+[2025-10-28 16:53:03] SSDM cores=5, replications=10
+[2025-10-28 16:53:03] Read keepvars: 21 variables
+[2025-10-28 16:53:03] All species finished.

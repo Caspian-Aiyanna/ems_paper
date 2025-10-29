@@ -1,0 +1,74 @@
+Call:
+coxph(formula = Surv(rep(1, 193477L), case_) ~ one_z + two_z + 
+    three_z + four_z + five_z + six_z + seven_z + eight_z + nine_z + 
+    ten_z + eleven_z + twelve_z + thirteen_z + fourteen_z + fifteen_z + 
+    sixteen_z + seventeen_z + eighteen_z + nineteen_z + twenty_z + 
+    twentyone_z + twentytwo_z + twentythree_z + twentyfour_z + 
+    twentyfive_z + twentysix_z + strata(step_id_), data = ssf_data, 
+    method = "exact")
+
+  n= 193477, number of events= 17944 
+
+                    coef  exp(coef)   se(coef)       z Pr(>|z|)    
+one_z          8.742e-02  1.091e+00  1.400e-01   0.624 0.532369    
+two_z         -1.355e-01  8.733e-01  1.403e-01  -0.966 0.334285    
+three_z       -5.636e-01  5.692e-01  1.695e-01  -3.325 0.000884 ***
+four_z        -8.921e-02  9.146e-01  4.930e-01  -0.181 0.856399    
+five_z         2.358e-01  1.266e+00  1.205e-01   1.956 0.050412 .  
+six_z         -1.193e-01  8.875e-01  6.172e-02  -1.933 0.053279 .  
+seven_z       -1.375e+00  2.528e-01  4.074e-01  -3.376 0.000736 ***
+eight_z        2.610e-01  1.298e+00  4.776e-01   0.547 0.584703    
+nine_z        -4.789e-01  6.194e-01  1.199e-01  -3.996 6.45e-05 ***
+ten_z          3.499e-01  1.419e+00  3.207e-01   1.091 0.275171    
+eleven_z       3.948e-01  1.484e+00  1.408e-01   2.804 0.005051 ** 
+twelve_z       5.503e-02  1.057e+00  1.224e-01   0.450 0.652906    
+thirteen_z     1.925e-01  1.212e+00  8.710e-02   2.211 0.027058 *  
+fourteen_z     1.647e-01  1.179e+00  8.939e-02   1.843 0.065401 .  
+fifteen_z      9.672e+02        Inf  1.406e+03   0.688 0.491565    
+sixteen_z     -1.574e+03  0.000e+00  2.289e+03  -0.688 0.491630    
+seventeen_z   -1.407e+03  0.000e+00  2.046e+03  -0.688 0.491601    
+eighteen_z     2.650e-01  1.303e+00  1.318e-01   2.010 0.044384 *  
+nineteen_z     1.055e-01  1.111e+00  1.138e-01   0.927 0.353781    
+twenty_z       8.763e-02  1.092e+00  1.073e-02   8.165 3.21e-16 ***
+twentyone_z    4.449e-02  1.046e+00  2.805e-02   1.586 0.112674    
+twentytwo_z    5.160e-02  1.053e+00  1.052e-02   4.907 9.25e-07 ***
+twentythree_z  1.224e-01  1.130e+00  1.982e-02   6.177 6.55e-10 ***
+twentyfour_z  -2.093e-01  8.111e-01  1.591e-02 -13.159  < 2e-16 ***
+twentyfive_z  -1.505e-01  8.602e-01  1.720e-02  -8.750  < 2e-16 ***
+twentysix_z   -2.557e-01  7.743e-01  1.312e-02 -19.489  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+              exp(coef) exp(-coef) lower .95 upper .95
+one_z            1.0914     0.9163    0.8295    1.4359
+two_z            0.8733     1.1451    0.6634    1.1497
+three_z          0.5692     1.7569    0.4083    0.7934
+four_z           0.9147     1.0933    0.3480    2.4037
+five_z           1.2659     0.7899    0.9996    1.6033
+six_z            0.8876     1.1267    0.7864    1.0017
+seven_z          0.2528     3.9563    0.1137    0.5617
+eight_z          1.2983     0.7703    0.5091    3.3107
+nine_z           0.6194     1.6143    0.4898    0.7835
+ten_z            1.4190     0.7047    0.7569    2.6602
+eleven_z         1.4840     0.6738    1.1262    1.9556
+twelve_z         1.0566     0.9465    0.8313    1.3429
+thirteen_z       1.2123     0.8249    1.0221    1.4380
+fourteen_z       1.1790     0.8481    0.9896    1.4048
+fifteen_z           Inf     0.0000    0.0000       Inf
+sixteen_z        0.0000        Inf    0.0000       Inf
+seventeen_z      0.0000        Inf    0.0000       Inf
+eighteen_z       1.3034     0.7672    1.0067    1.6875
+nineteen_z       1.1113     0.8999    0.8891    1.3889
+twenty_z         1.0916     0.9161    1.0689    1.1148
+twentyone_z      1.0455     0.9565    0.9896    1.1046
+twentytwo_z      1.0530     0.9497    1.0315    1.0749
+twentythree_z    1.1302     0.8848    1.0872    1.1750
+twentyfour_z     0.8111     1.2328    0.7862    0.8368
+twentyfive_z     0.8602     1.1625    0.8317    0.8897
+twentysix_z      0.7743     1.2914    0.7547    0.7945
+
+Concordance= 0.552  (se = 0.003 )
+Likelihood ratio test= 843.7  on 26 df,   p=<2e-16
+Wald test            = 796  on 26 df,   p=<2e-16
+Score (logrank) test = 792.4  on 26 df,   p=<2e-16
+

@@ -1,0 +1,4 @@
+leader_id=GBM_grid_1_AutoML_4_20251029_160217_model_27
+n_vars=21
+nthreads=6
+mode=FAST

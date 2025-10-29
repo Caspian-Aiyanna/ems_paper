@@ -2,3 +2,4 @@
 [2025-10-27 16:48:08] Species compared: E5A
 [2025-10-27 16:48:08] Compare E5A | H2O: prediction_E5A.tif | SSDM: ESDM_E5A.tif
 [2025-10-27 16:48:26] Done. Outputs in: results/compare/B
+[2025-10-29 09:17:50] Starting 05_h2o_vs_ssdm.R  (mode=FAST, run=B, q=0.75)

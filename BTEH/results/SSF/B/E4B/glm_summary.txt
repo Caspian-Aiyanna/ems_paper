@@ -1,0 +1,20 @@
+
+Call:
+stats::glm(formula = case_ ~ forest_val, family = binomial(), 
+    data = ssf_data)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -3.64456    1.01165  -3.603 0.000315 ***
+forest_val   0.06186    0.04600   1.345 0.178724    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 151570  on 245948  degrees of freedom
+Residual deviance: 151568  on 245947  degrees of freedom
+AIC: 151572
+
+Number of Fisher Scoring iterations: 5
+

@@ -24,3 +24,25 @@
 [2025-10-26 14:54:44] Training E5A
 [2025-10-26 15:00:06] Done E5A
 [2025-10-26 15:00:06] All species finished.
+[2025-10-28 17:05:48] Starting 03_h2o_train.R  (mode=FAST, run=B)
+[2025-10-28 17:05:48] Read keepvars: 21 variables
+[2025-10-28 17:06:00] H2O threads: 6
+[2025-10-28 17:06:00] Training E6B
+[2025-10-28 17:14:16] Done E6B
+[2025-10-28 17:14:16] All species finished.
+[2025-10-29 15:32:44] Starting 03_h2o_train.R  (mode=FAST, run=B)
+[2025-10-29 15:32:45] Read keepvars: 21 variables
+[2025-10-29 15:33:02] H2O threads: 6
+[2025-10-29 15:33:02] Training E1B
+[2025-10-29 15:42:40] Done E1B
+[2025-10-29 15:42:40] Training E2B
+[2025-10-29 15:51:55] Done E2B
+[2025-10-29 15:51:55] Training E3A
+[2025-10-29 16:01:45] Done E3A
+[2025-10-29 16:01:45] Training E3B
+[2025-10-29 16:11:09] Done E3B
+[2025-10-29 16:11:09] Training E4A
+[2025-10-29 16:20:54] Done E4A
+[2025-10-29 16:20:54] Training E4B
+[2025-10-29 16:30:20] Done E4B
+[2025-10-29 16:30:20] Training E5A

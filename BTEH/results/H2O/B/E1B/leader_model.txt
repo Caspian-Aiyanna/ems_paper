@@ -1,0 +1,4 @@
+leader_id=DRF_1_AutoML_1_20251029_153330
+n_vars=21
+nthreads=6
+mode=FAST

@@ -303,3 +303,20 @@
 [2025-10-27 19:23:02] Read keepvars: 21 variables
 [2025-10-27 19:23:02] Training E5A
 [2025-10-27 19:23:07] Training ESDM E5A (FAST: cores=5, rep=10)
+[2025-10-28 17:16:56] Starting 04_ssdm_train.R  (mode=FAST, run=B)
+[2025-10-28 17:16:56] SSDM cores=5, replications=10
+[2025-10-28 17:16:56] Read keepvars: 21 variables
+[2025-10-28 17:16:56] Training E6B
+[2025-10-28 17:16:57] Training ESDM E6B (FAST: cores=5, rep=10)
+[2025-10-28 17:19:04] ensemble_modelling() error for E6B: error reading from connection
+[2025-10-28 17:24:23] Starting 04_ssdm_train.R  (mode=REPRO, run=B)
+[2025-10-28 17:24:23] SSDM cores=1, replications=10
+[2025-10-28 17:24:24] Read keepvars: 21 variables
+[2025-10-28 17:24:25] Training E6B
+[2025-10-28 17:24:27] Training ESDM E6B (REPRO: core=1, rep=1)
+[2025-10-28 17:28:41] ensemble_modelling() error for E6B: error reading from connection
+[2025-10-28 17:31:43] Starting 04_ssdm_train.R  (mode=REPRO, run=B)
+[2025-10-28 17:31:43] SSDM cores=1, replications=10
+[2025-10-28 17:31:44] Read keepvars: 21 variables
+[2025-10-28 17:31:45] Training E6B
+[2025-10-28 17:31:48] Training ESDM E6B (REPRO: core=1, rep=1)

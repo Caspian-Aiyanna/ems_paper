@@ -1,0 +1,50 @@
+[2025-10-29 09:47:24] Using cadence 30±10 minutes. 
+[2025-10-29 09:47:33] SUCCESS → D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/E6B/E6B_SSF_forest_prob.tif 
+[2025-10-29 09:52:00] Using cadence 30±10 minutes. 
+[2025-10-29 09:52:00] Found 21 zero-length steps -> replacing with epsilon. 
+ERROR:  no applicable method for 'random_numbers' applied to an object of class "character" 
+[2025-10-29 09:56:37] Using cadence 30±10 minutes. 
+[2025-10-29 09:56:37] Found 21 zero-length steps -> replacing with epsilon. 
+ERROR:  'dist_gamma' is not an exported object from 'namespace:amt' 
+[2025-10-29 10:01:36] Using cadence 30±10 minutes. 
+[2025-10-29 10:01:36] Found 21 zero-length steps -> replacing with epsilon. 
+ERROR:  Can't select columns that don't exist.
+[31m✖[39m Column `step_id_` doesn't exist. 
+[2025-10-29 10:05:00] Using cadence 30±10 minutes. 
+[2025-10-29 10:05:00] Added missing step_id_ column. 
+[2025-10-29 10:05:00] Found 21 zero-length steps -> replacing with epsilon. 
+[2025-10-29 10:05:01] SUCCESS → D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/E6B/E6B_SSF_forest_prob.tif 
+[2025-10-29 10:14:41] Using cadence 30±10 minutes. 
+[2025-10-29 10:14:41] Added missing step_id_ column. 
+[2025-10-29 10:14:41] Found 21 zero-length steps -> replacing with epsilon. 
+[2025-10-29 10:14:49] SUCCESS → D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/E6B/E6B_SSF_forest_prob.tif 
+[2025-10-29 10:52:46] Using cadence 30±10 minutes. 
+[2025-10-29 10:52:47] Added missing step_id_ column. 
+[2025-10-29 10:52:47] Found 21 zero-length steps -> replacing with epsilon. 
+ERROR:  <text>:1:10: unexpected input
+1: case_ ~ 9_
+             ^ 
+[2025-10-29 10:59:25] Using cadence 30±10 minutes. 
+[2025-10-29 10:59:25] Added missing step_id_ column. 
+[2025-10-29 10:59:25] Found 21 zero-length steps -> replacing with epsilon. 
+ERROR:  'names' attribute [26] must be the same length as the vector [25] 
+[2025-10-29 11:02:03] Using cadence 30±10 minutes. 
+[2025-10-29 11:02:03] Added missing step_id_ column. 
+[2025-10-29 11:02:03] Found 21 zero-length steps -> replacing with epsilon. 
+ERROR:  'names' attribute [26] must be the same length as the vector [25] 
+[2025-10-29 11:06:18] Using cadence 30±10 minutes. 
+[2025-10-29 11:06:18] Added missing step_id_ column. 
+[2025-10-29 11:06:18] Found 21 zero-length steps -> replacing with epsilon. 
+ERROR:  [lapp] cannot use 'fun'. The number of values returned is less than the number of input cells.
+(returning: 1, expecting: 1352)
+Perhaps the function is not properly vectorized 
+[2025-10-29 11:08:48] Using cadence 30±10 minutes. 
+[2025-10-29 11:08:48] Added missing step_id_ column. 
+[2025-10-29 11:08:48] Found 21 zero-length steps -> replacing with epsilon. 
+ERROR:  [lapp] cannot use 'fun'. The number of values returned is less than the number of input cells.
+(returning: 1, expecting: 1352)
+Perhaps the function is not properly vectorized 
+[2025-10-29 11:13:27] Using cadence 30±10 minutes. 
+[2025-10-29 11:13:27] Added missing step_id_ column. 
+[2025-10-29 11:13:27] Found 21 zero-length steps -> replacing with epsilon. 
+[2025-10-29 11:13:47] SUCCESS → D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/E6B/E6B_SSF_rsf.tif (and 0–1: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/E6B/E6B_SSF_rsf_0to1.tif) 

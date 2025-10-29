@@ -1,0 +1,213 @@
+[2025-10-28 13:42:06] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 13:42:06] Run: B
+[2025-10-28 13:42:06] Input: data/clean | Env:  | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 13:42:06] ID=collar_id | time=timestamp [UTC] | step=60±20 | k_random=15
+[2025-10-28 13:42:06] Processing E1B ...
+[2025-10-28 13:53:20] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 13:53:20] Run: B
+[2025-10-28 13:53:20] Input: data/clean | Env:  | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 13:53:20] ID=collar_id | time=timestamp [UTC] | step=60±20 | k_random=15
+[2025-10-28 13:53:21] Processing E1B ...
+[2025-10-28 13:54:01] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 13:54:01] Run: B
+[2025-10-28 13:54:01] Input: data/clean | Env:  | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 13:54:01] ID=collar_id | time=timestamp [UTC] | step=60±20 | k_random=15
+[2025-10-28 13:54:02] Processing E1B ...
+[2025-10-28 14:00:55] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 14:00:55] Run: B
+[2025-10-28 14:00:55] Input: data/clean | Env:  | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 14:00:55] ID=collar_id | time=timestamp [UTC] | step=60±20 | k_random=15
+[2025-10-28 14:00:56] Processing E1B ...
+[2025-10-28 14:00:57] No steps after resampling/randomization for E1B (likely sparse or irregular data). Skipping.
+[2025-10-28 14:00:57] Processing E2B ...
+[2025-10-28 14:00:57] No steps after resampling/randomization for E2B (likely sparse or irregular data). Skipping.
+[2025-10-28 14:00:57] Processing E3A ...
+[2025-10-28 14:01:05] Env stack missing; cannot project raster. Skipping raster output.
+[2025-10-28 14:01:05] Processing E3B ...
+[2025-10-28 14:06:28] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 14:06:28] Run: B
+[2025-10-28 14:06:28] Input: data/clean | Env:  | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 14:06:28] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=5
+[2025-10-28 14:06:28] Processing E1B ...
+[2025-10-28 14:07:59] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 14:07:59] Run: B
+[2025-10-28 14:07:59] Input: data/clean | Env:  | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 14:07:59] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=15 | min_steps_burst=3 | fallback=TRUE
+[2025-10-28 14:08:00] Processing E1B ...
+[2025-10-28 14:08:00] E1B: No valid bursts at 30±10; retrying at 60±20.
+[2025-10-28 14:08:00] No steps after resampling/randomization for E1B (30-min primary and fallback both failed). Skipping.
+[2025-10-28 14:08:00] Processing E2B ...
+[2025-10-28 14:08:00] E2B: No valid bursts at 30±10; retrying at 60±20.
+[2025-10-28 14:08:00] No steps after resampling/randomization for E2B (30-min primary and fallback both failed). Skipping.
+[2025-10-28 14:08:00] Processing E3A ...
+[2025-10-28 14:08:12] E3A: built steps using 30±10 minutes.
+[2025-10-28 14:08:15] Env stack missing; cannot project raster. Skipping raster output.
+[2025-10-28 14:08:15] Processing E3B ...
+[2025-10-28 14:08:17] E3B: built steps using 30±10 minutes.
+[2025-10-28 14:08:17] Env stack missing; cannot project raster. Skipping raster output.
+[2025-10-28 14:08:17] Processing E4A ...
+[2025-10-28 14:08:28] E4A: built steps using 30±10 minutes.
+[2025-10-28 14:08:30] Env stack missing; cannot project raster. Skipping raster output.
+[2025-10-28 14:08:30] Processing E4B ...
+[2025-10-28 14:08:32] E4B: built steps using 30±10 minutes.
+[2025-10-28 14:08:32] Env stack missing; cannot project raster. Skipping raster output.
+[2025-10-28 14:08:32] Processing E5A ...
+[2025-10-28 14:08:32] E5A: No valid bursts at 30±10; retrying at 60±20.
+[2025-10-28 14:08:33] E5A: built steps using 60±20 minutes.
+[2025-10-28 14:08:34] Env stack missing; cannot project raster. Skipping raster output.
+[2025-10-28 14:08:34] Processing E5B ...
+[2025-10-28 14:08:34] E5B: built steps using 30±10 minutes.
+[2025-10-28 14:08:35] Env stack missing; cannot project raster. Skipping raster output.
+[2025-10-28 14:08:35] Processing E6B ...
+[2025-10-28 14:08:35] E6B: No valid bursts at 30±10; retrying at 60±20.
+[2025-10-28 14:08:35] No steps after resampling/randomization for E6B (30-min primary and fallback both failed). Skipping.
+[2025-10-28 14:08:35] Processing E6B_new ...
+[2025-10-28 14:08:35] E6B_new: No valid bursts at 30±10; retrying at 60±20.
+[2025-10-28 14:08:35] No steps after resampling/randomization for E6B_new (30-min primary and fallback both failed). Skipping.
+[2025-10-28 14:28:47] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 14:28:47] Run: B
+[2025-10-28 14:28:47] Input: data/clean | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 14:28:47] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=15 | min_steps_burst=3 | fallback=TRUE
+[2025-10-28 14:31:45] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 14:31:45] Run: B
+[2025-10-28 14:31:45] Input: data/clean | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 14:31:45] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=15 | min_steps_burst=3 | fallback=TRUE
+[2025-10-28 14:31:45] Loaded env raster for run B: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/envi/B/stack.tif [26 layers]
+[2025-10-28 14:31:45] Processing E1B (Male) ...
+[2025-10-28 14:31:46] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 14:31:46] No steps for E1B; skipping.
+[2025-10-28 14:31:46] Processing E2B (Male) ...
+[2025-10-28 14:31:46] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 14:31:46] No steps for E2B; skipping.
+[2025-10-28 14:31:46] Processing E3A (Female) ...
+[2025-10-28 14:31:57] E3A: built steps using 30±10
+[2025-10-28 15:02:26] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 15:02:26] Run: B
+[2025-10-28 15:02:26] Input: data/clean | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 15:02:26] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=15 | min_steps_burst=3 | fallback=TRUE
+[2025-10-28 15:02:26] Loaded env raster for run B: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/envi/B/stack/stack.tif [26 layers]
+[2025-10-28 15:02:27] Processing E1B (Male) ...
+[2025-10-28 15:02:27] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:02:27] No steps for E1B; skipping.
+[2025-10-28 15:02:27] Processing E2B (Male) ...
+[2025-10-28 15:02:27] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:02:27] No steps for E2B; skipping.
+[2025-10-28 15:02:27] Processing E3A (Female) ...
+[2025-10-28 15:02:39] E3A: built steps using 30±10
+[2025-10-28 15:07:06] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 15:07:06] Run: B
+[2025-10-28 15:07:06] Input: data/clean | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 15:07:06] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=15 | min_steps_burst=3 | fallback=TRUE
+[2025-10-28 15:07:06] Loaded env raster for run B: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/envi/B/stack/stack.tif [26 layers]
+[2025-10-28 15:07:07] Processing E1B (Male) ...
+[2025-10-28 15:07:08] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:07:08] No steps for E1B; skipping.
+[2025-10-28 15:07:08] Processing E2B (Male) ...
+[2025-10-28 15:07:08] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:07:08] No steps for E2B; skipping.
+[2025-10-28 15:07:08] Processing E3A (Female) ...
+[2025-10-28 15:07:20] E3A: built steps using 30±10
+[2025-10-28 15:09:13] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 15:09:13] Run: B
+[2025-10-28 15:09:13] Input: data/clean | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 15:09:13] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=15 | min_steps_burst=3 | fallback=TRUE
+[2025-10-28 15:09:13] Loaded env raster for run B: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/envi/B/stack/stack.tif [26 layers]
+[2025-10-28 15:09:13] Processing E1B (Male) ...
+[2025-10-28 15:09:13] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:09:13] No steps for E1B; skipping.
+[2025-10-28 15:09:13] Processing E2B (Male) ...
+[2025-10-28 15:09:13] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:09:13] No steps for E2B; skipping.
+[2025-10-28 15:09:13] Processing E3A (Female) ...
+[2025-10-28 15:09:25] E3A: built steps using 30±10
+[2025-10-28 15:09:28] Model failed for E3A: <text>:1:107: unexpected input
+1: case_ ~ 0 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + CosAspect + 1_
+                                                                                                              ^
+[2025-10-28 15:09:28] Processing E3B (Female) ...
+[2025-10-28 15:09:31] E3B: built steps using 30±10
+[2025-10-28 15:09:32] Model failed for E3B: <text>:1:107: unexpected input
+1: case_ ~ 0 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + CosAspect + 1_
+                                                                                                              ^
+[2025-10-28 15:09:32] Processing E4A (Female) ...
+[2025-10-28 15:09:42] E4A: built steps using 30±10
+[2025-10-28 15:09:45] Model failed for E4A: <text>:1:107: unexpected input
+1: case_ ~ 0 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + CosAspect + 1_
+                                                                                                              ^
+[2025-10-28 15:09:45] Processing E4B (Female) ...
+[2025-10-28 15:09:47] E4B: built steps using 30±10
+[2025-10-28 15:09:47] Model failed for E4B: <text>:1:107: unexpected input
+1: case_ ~ 0 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + CosAspect + 1_
+                                                                                                              ^
+[2025-10-28 15:09:47] Processing E5A (Female) ...
+[2025-10-28 15:09:47] E5A: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:09:49] E5A: built steps using 60±20 (fallback)
+[2025-10-28 15:09:50] Model failed for E5A: <text>:1:107: unexpected input
+1: case_ ~ 0 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + CosAspect + 1_
+                                                                                                              ^
+[2025-10-28 15:09:50] Processing E5B (Female) ...
+[2025-10-28 15:09:50] E5B: built steps using 30±10
+[2025-10-28 15:09:51] Model failed for E5B: <text>:1:107: unexpected input
+1: case_ ~ 0 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + CosAspect + 1_
+                                                                                                              ^
+[2025-10-28 15:09:51] Processing E6B (Male) ...
+[2025-10-28 15:09:51] E6B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:09:51] No steps for E6B; skipping.
+[2025-10-28 15:09:51] Processing E6B_new (Male) ...
+[2025-10-28 15:09:51] E6B_new: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:09:51] No steps for E6B_new; skipping.
+[2025-10-28 15:20:26] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 15:20:26] Run: B
+[2025-10-28 15:20:26] Input: data/clean | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 15:20:26] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=15 | min_steps_burst=3 | fallback=TRUE
+[2025-10-28 15:20:28] Loaded env raster for run B: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/envi/B/stack/stack.tif [26 layers]
+[2025-10-28 15:20:28] Processing E1B (Male) ...
+[2025-10-28 15:20:28] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:20:28] No steps for E1B; skipping.
+[2025-10-28 15:20:28] Processing E2B (Male) ...
+[2025-10-28 15:20:28] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:20:28] No steps for E2B; skipping.
+[2025-10-28 15:20:28] Processing E3A (Female) ...
+[2025-10-28 15:20:39] E3A: built steps using 30±10
+[2025-10-28 15:26:56] Renamed env layers for model safety: v0, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v1, v2, v3, v4, v5, v6, v7, v8, CosAspect, v1_1, EVI, v3_1, v4_1, NDVI, v7_1
+[2025-10-28 15:26:56] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 15:26:56] Run: B
+[2025-10-28 15:26:56] Input: data/clean | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 15:26:56] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=15 | min_steps_burst=3 | fallback=TRUE
+[2025-10-28 15:26:56] Loaded env raster for run B: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/envi/B/stack/stack.tif [26 layers]
+[2025-10-28 15:26:57] Processing E1B (Male) ...
+[2025-10-28 15:26:57] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:26:57] No steps for E1B; skipping.
+[2025-10-28 15:26:57] Processing E2B (Male) ...
+[2025-10-28 15:26:57] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:26:57] No steps for E2B; skipping.
+[2025-10-28 15:26:57] Processing E3A (Female) ...
+[2025-10-28 15:27:09] E3A: built steps using 30±10
+[2025-10-28 15:31:24] Renamed env layers for model safety: v0, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v1, v2, v3, v4, v5, v6, v7, v8, CosAspect, v1_1, EVI, v3_1, v4_1, NDVI, v7_1
+[2025-10-28 15:31:24] Starting 06_ssf_to_rasters.R (mode=FAST)
+[2025-10-28 15:31:24] Run: B
+[2025-10-28 15:31:24] Input: data/clean | Out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/results/SSF/B
+[2025-10-28 15:31:24] ID=collar_id | time=timestamp [UTC] | step=30±10 | k_random=15 | min_steps_burst=3 | fallback=TRUE
+[2025-10-28 15:31:24] Loaded env raster for run B: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/envi/B/stack/stack.tif [26 layers]
+[2025-10-28 15:31:24] Processing E1B (Male) ...
+[2025-10-28 15:31:24] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:31:24] No steps for E1B; skipping.
+[2025-10-28 15:31:24] Processing E2B (Male) ...
+[2025-10-28 15:31:24] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:31:24] No steps for E2B; skipping.
+[2025-10-28 15:31:24] Processing E3A (Female) ...
+[2025-10-28 15:31:35] E3A: built steps using 30±10
+[2025-10-28 15:32:57] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:32:57] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:33:32] E5A: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:33:35] E6B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:33:35] E6B_new: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:35:48] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:35:48] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:36:23] E5A: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:36:25] E6B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:36:26] E6B_new: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:38:52] E1B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:38:52] E2B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:39:59] E5A: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:40:18] E6B: No valid bursts at 30±10; retrying 60±20.
+[2025-10-28 15:40:18] E6B_new: No valid bursts at 30±10; retrying 60±20.

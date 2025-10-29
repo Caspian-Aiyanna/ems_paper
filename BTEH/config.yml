@@ -5,9 +5,9 @@ h2o:
   nthreads_fast: -2     # use all cores minus 2
   seed: 123
   automl:
-    include_algos_repro: ["GBM","DRF"] # specify algorithms to include for REPRO mode
+    include_algos_repro: [] # specify algorithms to include for REPRO mode
     include_algos_fast: [] # best to leave empty for FAST mode (uses all available algorithms)
-    max_models_repro: 30
+    max_models_repro: 100
     max_models_fast: 60
 
 ssdm:

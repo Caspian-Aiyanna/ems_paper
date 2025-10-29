@@ -137,12 +137,12 @@ algos_default <- c("GLM","GBM","RF","MARS","SVM","ANN","CTA")
 algos <- if (!is.null(opts$algos)) trimws(unlist(strsplit(opts$algos, ","))) else algos_default
 
 
-# --- ESDM trainer for REPRO mode (single core, 1 replication) -----------------
+# --- ESDM trainer for REPRO mode (single core, 10 replication) -----------------
 train_esdm_repro <- function(tag, occ_df, env_use, out_dir, algos_eff) {
   dir_ensure(out_dir)
   message(sprintf("ESDM training [REPRO]: %s | n=%d | vars=%d | cores=%d | reps=%d", 
-                  tag, nrow(occ_df), raster::nlayers(env_use), cfg$ssdm$cores_repro %||% 1L, 1))
-  log_line(sprintf("Training ESDM %s (REPRO: core=%d, rep=1)", tag, cfg$ssdm$cores_repro %||% 1L), logf)
+                  tag, nrow(occ_df), raster::nlayers(env_use), cfg$ssdm$cores_repro %||% 1L, 10))
+  log_line(sprintf("Training ESDM %s (REPRO: core=%d, rep=10)", tag, cfg$ssdm$cores_repro %||% 1L), logf)
 
   occ_use <- occ_df %>% dplyr::select(lon, lat) %>% dplyr::distinct()
   set.seed((cfg$seeds$per_dataset_base %||% 30000L) + sp_hash_int(tag))
@@ -205,7 +205,6 @@ train_esdm_repro <- function(tag, occ_df, env_use, out_dir, algos_eff) {
   invisible(esdm)
 }
 
-
 # --- ESDM trainer for FAST mode (multiple cores, multiple replications) --------
 train_esdm_fast <- function(tag, occ_df, env_use, out_dir, algos_eff) {
   dir_ensure(out_dir)
@@ -228,7 +227,7 @@ train_esdm_fast <- function(tag, occ_df, env_use, out_dir, algos_eff) {
       cores           = cfg$ssdm$cores_fast %||% 8L,
       cv              = "holdout",
       cv.param        = c(0.75, 10),
-      ensemble.thresh = 0.75,
+      ensemble.thresh = 0,
       verbose         = FALSE
     ),
     error = function(e) {
