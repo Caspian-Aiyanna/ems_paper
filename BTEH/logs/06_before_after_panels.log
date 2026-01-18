@@ -161,3 +161,41 @@
 [2025-11-12 22:25:11]   Gain km²: [0.15, 3.17, 0.22]
 [2025-11-12 22:25:25] Saved: results/panels/E5_SSDM_before_after_panel.png
 [2025-11-12 22:25:25] Done. Panels saved in: results/panels
+[2026-01-18 20:59:19] Starting 06_before_after_panel_plots.R (using temporal_jaccard.csv)
+[2026-01-18 20:59:19] Loaded metrics from: results/compare/h2o_vs_ssdm/temporal_jaccard.csv
+[2026-01-18 20:59:20] AOI loaded: data/shp/HV20233.shp
+[2026-01-18 20:59:20] Processing: E3 | H2O (AOI crop: enabled)
+[2026-01-18 20:59:23]   Thresholds: [0.25, 0.50, 0.75]
+[2026-01-18 20:59:23]   Temporal Jaccard: [0.439, 0.027, 0.003]
+[2026-01-18 20:59:23]   Gain km²: [42.27, 59.36, 39.60]
+[2026-01-18 20:59:45] Saved: results/panels/E3_H2O_before_after_panel.png
+[2026-01-18 20:59:45] Processing: E3 | SSDM (AOI crop: enabled)
+[2026-01-18 20:59:47]   Thresholds: [0.25, 0.50, 0.75]
+[2026-01-18 20:59:47]   Temporal Jaccard: [0.177, 0.061, 0.007]
+[2026-01-18 20:59:47]   Gain km²: [39.47, 22.60, 6.28]
+[2026-01-18 21:00:03] Saved: results/panels/E3_SSDM_before_after_panel.png
+[2026-01-18 21:00:03] Done. Panels saved in: results/panels
+[2026-01-18 21:12:37] Starting 06_before_after_panel_plots.R (using temporal_jaccard.csv)
+[2026-01-18 21:12:38] Loaded metrics from: results/compare/h2o_vs_ssdm/temporal_jaccard.csv
+[2026-01-18 21:12:38] AOI loaded: data/shp/HV20233.shp
+[2026-01-18 21:12:38] Processing: E4 | H2O (AOI crop: enabled)
+[2026-01-18 21:12:40]   Thresholds: [0.25, 0.50, 0.75]
+[2026-01-18 21:12:40]   Temporal Jaccard: [0.398, 0.442, 0.002]
+[2026-01-18 21:12:40]   Gain km²: [40.24, 26.02, 42.72]
+[2026-01-18 21:12:57] Saved: results/panels/E4_H2O_before_after_panel.png
+[2026-01-18 21:12:57] Processing: E4 | SSDM (AOI crop: enabled)
+[2026-01-18 21:12:59]   Thresholds: [0.25, 0.50, 0.75]
+[2026-01-18 21:12:59]   Temporal Jaccard: [0.076, 0.003, 0.000]
+[2026-01-18 21:12:59]   Gain km²: [43.99, 31.29, 17.61]
+[2026-01-18 21:13:14] Saved: results/panels/E4_SSDM_before_after_panel.png
+[2026-01-18 21:13:14] Processing: E5 | H2O (AOI crop: enabled)
+[2026-01-18 21:13:15]   Thresholds: [0.25, 0.50, 0.75]
+[2026-01-18 21:13:15]   Temporal Jaccard: [0.843, 0.747, 0.789]
+[2026-01-18 21:13:15]   Gain km²: [7.42, 11.37, 6.62]
+[2026-01-18 21:13:30] Saved: results/panels/E5_H2O_before_after_panel.png
+[2026-01-18 21:13:30] Processing: E5 | SSDM (AOI crop: enabled)
+[2026-01-18 21:13:31]   Thresholds: [0.25, 0.50, 0.75]
+[2026-01-18 21:13:31]   Temporal Jaccard: [0.683, 0.422, 0.134]
+[2026-01-18 21:13:31]   Gain km²: [0.15, 3.17, 0.22]
+[2026-01-18 21:13:47] Saved: results/panels/E5_SSDM_before_after_panel.png
+[2026-01-18 21:13:48] Done. Panels saved in: results/panels

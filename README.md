@@ -14,8 +14,7 @@ The pipeline integrates multiple modelling frameworks:
 |------------|--------------|
 | **H2O AutoML** | Machine-learning ensemble (GBM, XGBoost, DNN, DRF, etc - upto 100 models) for habitat suitability |
 | **SSDM** | Classical stacked species distribution modelling (GLM, GAM, RF, ANN, GBM) |
-| **SSF/RSF** | Step-selection functions derived from GPS telemetry (used for triangulation) |
-| **Comparison & Uncertainty** | Between-method, temporal, and replicate analyses |
+| **Comparison & Metrics** | Between-method (H2O vs SSDM), temporal change, and hotspot analyses |
 
 All outputs are automatically written under `results/` and logged under `logs/`.
 
@@ -25,31 +24,24 @@ All outputs are automatically written under `results/` and logged under `logs/`.
 
 ```
 .
-├── config.yml                # Global config (mode, cores, etc.)
-├── Makefile                  # Optional automation targets
-├── renv.lock                 # Reproducible R environment
-├── R/                        # Utility functions
-│   ├── utils_h2o.R
-│   ├── utils_io.R
-│   ├── utils_kendall.R
-│   ├── utils_plot.R
-│   └── utils_repro.R
-├── scripts/                  # Main pipeline scripts
-│   ├── 02_dbscan_thin_degrees.R     # Occurrence thinning
-│   ├── 03_h2o_train.R               # AutoML training
-│   ├── 04_ssdm_train.R              # SSDM ensemble training
-│   ├── 05_h2o_vs_ssdm.R             # Between-method comparison
-│   ├── 06a_uncertainty.R            # Uncertainty decomposition
-│   └── BTEH_GEE_Extract.js          # GEE environmental extraction
-├── data/
-│   ├── clean/       # Pre-processed telemetry CSVs (E1B–E6B, A/B)
-│   ├── envi/        # Environmental stacks (A/B)
-│   ├── occ/         # Thinned & replicate occurrences
-│   └── shp/         # AOI shapefiles (HV20233.*)
-├── results/          # Model outputs (H2O, SSDM, compare, uncertainty, etc.)
-├── logs/             # Run-time logs
-├── plans/            # Variable-selection plans (Kendall results)
-└── hpc/              # SLURM job scripts
+├── BTEH/
+│   ├── config.yml                # Global config (mode, cores, etc.)
+│   ├── Makefile                  # Optional automation targets
+│   ├── scripts_Habitat_Suitability/ # Core SDM Pipeline (H2O, SSDM, Appendix)
+│   ├── scripts_Movement_Ecology/    # Behavioral & Temporal analysis (Thinning, Panels, GSL)
+│   ├── R/                           # Utility functions
+│   ├── config.yml                   # Global config (mode, cores, etc.)
+│   ├── Makefile                     # Automation targets
+│   ├── data/
+│   │   ├── clean/       # Pre-processed telemetry datasets
+│   │   ├── envi/        # Environmental sets
+│   │   ├── occ/         # Occurrence replicates
+│   │   └── shp/         # Boundary shapefiles
+│   ├── results/          # Generated map outputs
+│   ├── logs/             # Execution logs
+│   ├── plans/            # Variable selection plans
+├── renv.lock                 # Environment lockfile
+└── results/                  # Final manuscript assets
 ```
 
 ---
@@ -79,7 +71,7 @@ All outputs are automatically written under `results/` and logged under `logs/`.
 ### 🧩 Option 1 — Reproducible (“REPRO”) Run
 
 Use **single-core deterministic** execution to eliminate randomness.  
-Ideal for publication and final validation.
+Ensures rigorous and reproducible results.
 
 ```bash
 sbatch hpc/BTEH_REPRO.slurm
@@ -88,13 +80,13 @@ sbatch hpc/BTEH_REPRO.slurm
 Or locally:
 
 ```bash
-Rscript scripts/03_h2o_train.R --run A --mode REPRO
-Rscript scripts/04_ssdm_train.R --run A --mode REPRO
-Rscript scripts/05_h2o_vs_ssdm.R --run A --mode REPRO
+Rscript scripts_Habitat_Suitability/03_h2o_train.R --run A --mode REPRO
+Rscript scripts_Habitat_Suitability/04_ssdm_train.R --run A --mode REPRO
+Rscript scripts_Habitat_Suitability/05_h2o_vs_ssdm.R --run A --mode REPRO
 
-Rscript scripts/03_h2o_train.R --run B --mode REPRO
-Rscript scripts/04_ssdm_train.R --run B --mode REPRO
-Rscript scripts/05_h2o_vs_ssdm.R --run B --mode REPRO
+Rscript scripts_Habitat_Suitability/03_h2o_train.R --run B --mode REPRO
+Rscript scripts_Habitat_Suitability/04_ssdm_train.R --run B --mode REPRO
+Rscript scripts_Habitat_Suitability/05_h2o_vs_ssdm.R --run B --mode REPRO
 ```
 
 **Outputs:**  
@@ -117,9 +109,9 @@ sbatch hpc/BTEH_FAST.slurm
 Or locally (multi-core machine):
 
 ```bash
-Rscript scripts/03_h2o_train.R --run A --mode FAST
-Rscript scripts/04_ssdm_train.R --run A --mode FAST
-Rscript scripts/05_h2o_vs_ssdm.R --run A --mode FAST
+Rscript scripts_Habitat_Suitability/03_h2o_train.R --run A --mode FAST
+Rscript scripts_Habitat_Suitability/04_ssdm_train.R --run A --mode FAST
+Rscript scripts_Habitat_Suitability/05_h2o_vs_ssdm.R --run A --mode FAST
 ```
 
 ---
@@ -149,9 +141,9 @@ All scripts log progress and warnings to the `logs/` folder:
 
 - `results/H2O/` – AutoML rasters, models, leaderboards  
 - `results/SSDM/` – Ensemble rasters, algorithm summaries  
-- `results/compare/` – Metrics, hotspot overlaps, maps  
-- `results/uncertainty/` – Variance, stability, gain/loss tables  
-- `results/figures/` – Final patchwork panels for publication
+- `results/compare/` – Metrics, hotspot overlaps, and temporal change maps  
+- `results/appendix/` – Supplementary figures (base learner weights, etc.)  
+- `results/panels/` – Multi-pane composite panels  
 
 Each result folder includes `.csv` summaries and `.tif` rasters ready for visualization.
 
@@ -170,15 +162,15 @@ Each result folder includes `.csv` summaries and `.tif` rasters ready for visual
 
 If you use this workflow or data structure, please cite:
 
-> Aiyanna C., et al. (2025). *Automated ensemble modelling and uncertainty quantification for African elephant habitat connectivity*.  
-> Environmental Modelling & Software. (In preparation)
+> Harin Aiyanna C R; Francesco Pirotti; Brooke Friswold; Antoinette van de Water. (2025). *Movement Meets Machine Learning: Dual framework testing for Predicting Elephant Habitat Suitability*.  
+> Movement Ecology. (In preparation)
 
 ---
 
 ## 🧰 Contact
 
-**Author:** Caspian Aiyanna  
-**Institution:** [Your University / Research Group]  
+**Author:** Harin Aiyanna C R
+**Institution:** [Interdepartmental Research Center of Geomatics (CIRGEO), University of Padova and Bring The Elephant Home]  
 **Email:** [harinaiyanna.cheriyandaraveendra@phd.unipd.it]  
 **GitHub:** [https://github.com/Caspian-Aiyanna](https://github.com/Caspian-Aiyanna)
 

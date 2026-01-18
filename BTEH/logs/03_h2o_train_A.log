@@ -86,3 +86,9 @@
 [2025-11-06 18:57:51] AutoML returned NULL for E6B — switching to fallback GBM.
 [2025-11-06 19:00:29] Done E6B
 [2025-11-06 19:00:29] All species finished.
+[2026-01-18 20:58:44] Starting 03_h2o_train.R  (mode=FAST, run=A)
+[2026-01-18 20:58:45] Read keepvars: 21 variables
+[2026-01-18 20:58:57] H2O threads: 6
+[2026-01-18 20:58:57] Species to run (1): E3A
+[2026-01-18 20:58:57] Skip E3A — outputs present
+[2026-01-18 20:58:57] All species finished.

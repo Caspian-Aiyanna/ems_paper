@@ -9,56 +9,53 @@ MODE ?= REPRO
 Q ?= 0.75
 
 # Script paths
-SCRIPTS = scripts
+SCRIPTS_HS = scripts_Habitat_Suitability
+SCRIPTS_ME = scripts_Movement_Ecology
 RSCRIPT = Rscript
 
 # ----------------------------------------------------------
-# Environment setup (only once per system)
+# Environment setup
 # ----------------------------------------------------------
 setup:
 	@echo ">>> Restoring R environment from renv.lock"
 	@$(RSCRIPT) -e "install.packages('renv', repos='https://cloud.r-project.org'); renv::activate(); renv::restore()"
 
 # ----------------------------------------------------------
-# DBSCAN thinning + summary (optional upstream steps)
+# DBSCAN thinning
 # ----------------------------------------------------------
 thin:
-	@$(RSCRIPT) $(SCRIPTS)/02_dbscan_thin_degrees.R --mode $(MODE)
-	@$(RSCRIPT) $(SCRIPTS)/02a_summarize_thin.R
+	@$(RSCRIPT) $(SCRIPTS_ME)/02_spatial_thinning.R --run $(RUN) --mode $(MODE)
 
 # ----------------------------------------------------------
-# H2O and SSDM training (replicate workflows)
+# H2O and SSDM training
 # ----------------------------------------------------------
-rep-h2o:
-	@echo ">>> Running H2O replicates for run $(RUN)"
-	@$(RSCRIPT) $(SCRIPTS)/03a_h2o_replicates.R --run $(RUN) --mode $(MODE)
+train-h2o:
+	@echo ">>> Running H2O training for run $(RUN)"
+	@$(RSCRIPT) $(SCRIPTS_HS)/03_h2o_train.R --run $(RUN) --mode $(MODE)
 
-rep-ssdm:
-	@echo ">>> Running SSDM replicates for run $(RUN)"
-	@$(RSCRIPT) $(SCRIPTS)/04a_ssdm_replicates.R --run $(RUN) --mode $(MODE)
+train-ssdm:
+	@echo ">>> Running SSDM training for run $(RUN)"
+	@$(RSCRIPT) $(SCRIPTS_HS)/04_ssdm_train.R --run $(RUN) --mode $(MODE)
 
 # ----------------------------------------------------------
-# Between-method comparison from replicate results
+# Comparison & Appendix
 # ----------------------------------------------------------
 compare:
-	@echo ">>> Comparing H2O vs SSDM for run $(RUN) (q=$(Q))"
-	@$(RSCRIPT) $(SCRIPTS)/05a_h2o_vs_ssdm_results.R --run $(RUN) --mode $(MODE) --q $(Q)
+	@echo ">>> Comparing H2O vs SSDM for run $(RUN)"
+	@$(RSCRIPT) $(SCRIPTS_HS)/05_h2o_vs_ssdm.R --run $(RUN) --mode $(MODE)
+
+appendix:
+	@echo ">>> Generating appendix figures"
+	@$(RSCRIPT) $(SCRIPTS_HS)/07_appendix.R
 
 # ----------------------------------------------------------
-# Figures (no recomputation)
+# Full pipeline
 # ----------------------------------------------------------
-paper:
-	@echo ">>> Generating paper-ready figures from paper_results/"
-	@$(RSCRIPT) $(SCRIPTS)/06_uncertainity.R
-
-# ----------------------------------------------------------
-# Full pipeline (replicates + comparison + paper)
-# ----------------------------------------------------------
-all: rep-h2o rep-ssdm compare paper
+all: thin train-h2o train-ssdm compare appendix
 
 # ----------------------------------------------------------
 # Clean up results
 # ----------------------------------------------------------
 clean:
-	rm -rf results/* paper_results/* logs/*
+	rm -rf results/H2O/* results/SSDM/* results/compare/* results/appendix/* logs/*
 	@echo ">>> Cleaned outputs."

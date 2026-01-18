@@ -1,0 +1,12 @@
+[2026-01-18 20:58:29] Starting 02_dbscan_thin.R (mode=FAST)
+[2026-01-18 20:58:29] Run: A | eps_deg: 0.004 | minPts: 15 | fraction: 0.09 | min_samples: 4
+[2026-01-18 20:58:29] Input: data/clean | MAIN out: D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/data/occ/thinned_DBSCAN | UNCERTAINTY (replicates) out: D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/replicates_DBSCAN
+[2026-01-18 20:58:29] Recorded params in: plans/dbscan_params.yml
+[2026-01-18 20:58:31] MAIN  E3A: raw=25091 | clean=24941 -> kept=2246 (saved D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/data/occ/thinned_DBSCAN/E3A.csv)
+[2026-01-18 20:58:31] UNC1 E3A: raw=25091 | clean=24941 -> kept=2246 (saved D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/replicates_DBSCAN/E3A_rep1.csv)
+[2026-01-18 20:58:31] UNC2 E3A: raw=25091 | clean=24941 -> kept=2246 (saved D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/replicates_DBSCAN/E3A_rep2.csv)
+[2026-01-18 20:58:32] UNC3 E3A: raw=25091 | clean=24941 -> kept=2246 (saved D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/replicates_DBSCAN/E3A_rep3.csv)
+[2026-01-18 20:58:32] Cleaning diagnostics saved: logs/cleaning_diagnostics_A.csv
+[2026-01-18 20:58:32] Thinning summary saved: D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/results/compare/thin_summary.csv
+[2026-01-18 20:58:32] Totals saved: logs/thin_totals_A.csv
+[2026-01-18 20:58:32] DONE. Total RAW: 25091 | CLEAN: 24941 | main kept: 2246 | unc reps kept: [2246, 2246, 2246]

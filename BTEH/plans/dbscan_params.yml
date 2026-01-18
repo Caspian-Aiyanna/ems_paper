@@ -8,3 +8,13 @@ B:
     main_out: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/data/occ/thinned_DBSCAN
     uncertainty: D:/PhD/Projects/SDM_projects/BTEH/SDM_ele/BTEH/BTEH/replicates_DBSCAN
     timestamp: 2025-11-04 14:25:28
+A:
+  dbscan:
+    eps_deg: 0.004
+    minPts: 15
+    fraction: 0.09
+    min_samples: 4
+    input: D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/data/clean
+    main_out: D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/data/occ/thinned_DBSCAN
+    uncertainty: D:/PhD/Projects/WUR_projects/BTEH_SDM/BioHabs/BTEH/replicates_DBSCAN
+    timestamp: 2026-01-18 20:58:29
