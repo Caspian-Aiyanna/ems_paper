@@ -1,6 +1,6 @@
-# 🐘 BTEH – Elephant Habitat Modelling & Uncertainty Analysis
+# 🐘 BTEH – Elephant Habitat Modelling in restored landscapes
 
-This repository contains the full, reproducible modelling pipeline for **Main Paper** of the BTEH project — quantifying **habitat suitability, temporal change, and algorithmic uncertainty** for African elephants before and after fence removal in Kariega Game Reserve, South Africa.
+This repository contains the full, reproducible modelling pipeline of the BTEH project. It quantifies **habitat suitability, temporal change and comparing two SDM techniques** for African elephants before and after fence removal in Kariega Game Reserve, South Africa.
 
 All workflows are implemented in **R** (with optional Google Earth Engine extraction scripts) and are designed to run both locally and on **HPC clusters** via SLURM or PBS job schedulers.
 
