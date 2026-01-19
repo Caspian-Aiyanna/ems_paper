@@ -4,6 +4,16 @@
 # Description: This script performs DBSCAN-based spatial thinning to reduce
 # spatial autocorrelation in elephant occurrence datasets. It handles cleaning
 # of raw telemetry data and generates replicates for uncertainty analysis.
+#
+# REGULATORY JUSTIFICATION:
+# 1. Framework: DBSCAN (Ester et al. 1996) is used for thinning rather than
+#    grid-based filters because it handles local point density variability.
+# 2. Parameters (eps=400m, minPts=10): Selected based on the 30-min fix rate
+#    and environmental resolution. 10 points = 5 hrs of local occupancy;
+#    400m exceeds spatial autocorrelation distance relative to 30-90m covariates.
+# 3. References:
+#    - Ester et al. (1996) for DBSCAN algorithm.
+#    - Boria et al. (2014) for spatial filtering to reduce overfitting.
 # =============================================================================
 # !/usr/bin/env Rscript
 suppressPackageStartupMessages({
@@ -41,9 +51,18 @@ source(file.path(.root, "R", "utils_repro.R"))
 # ---------------- CLI ----------------
 opt <- list(
   make_option(c("--run"), type = "character", default = "B", help = "Run tag (e.g., A or B)"),
-  make_option(c("--eps_deg"), type = "double", default = 0.004, help = "DBSCAN eps in *degrees* (~400 m at equator)"),
-  make_option(c("--minPts"), type = "integer", default = 15, help = "DBSCAN minPts"),
-  make_option(c("--fraction"), type = "double", default = 0.09, help = "Sampling fraction within clusters/noise"),
+  make_option(c("--eps_deg"),
+    type = "double", default = 0.004,
+    help = "DBSCAN eps in degrees (~400m). Justification: Exceeds covar resolution and consecutive-fix autocorrelation (Boria et al. 2014)"
+  ),
+  make_option(c("--minPts"),
+    type = "integer", default = 10,
+    help = "DBSCAN minPts. Justification: Representing >=5 hrs of occupancy (10 fixes) to identify behavioral clusters"
+  ),
+  make_option(c("--fraction"),
+    type = "double", default = 0.2,
+    help = "Sampling fraction (20%). Justification: Thins clusters to reduce redundancy while preserving density footprint"
+  ),
   make_option(c("--min_samples"), type = "integer", default = 4, help = "Minimum samples to take per cluster"),
   make_option(c("--input"), type = "character", default = NULL, help = "Input folder of per-species cleaned CSVs (e.g., data/clean)"),
   make_option(c("--out_thin"), type = "character", default = NULL, help = "Output folder for MAIN replicate (default: data/occ/thinned_DBSCAN)"),
